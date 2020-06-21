@@ -55,18 +55,6 @@ services:
     networks:
       - lumen
 
-  artisan:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: artisan
-    volumes:
-      - ./src:/var/www/html
-    working_dir: /var/www/html
-    entrypoint: ['/var/www/html/artisan']
-    networks:
-      - lumen
-
   npm:
     image: node:lts-stretch-slim
     container_name: npm
